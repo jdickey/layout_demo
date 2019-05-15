@@ -1,0 +1,13 @@
+
+@mixin horizontal-list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+  
+    li {
+      flex-basis: fill;
+      padding: 0.5rem 1rem;
+    } // li
+  }
+  

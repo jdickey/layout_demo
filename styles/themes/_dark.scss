@@ -1,0 +1,70 @@
+
+.body--dark-theme {
+  background-color: #111;
+  color: ivory;
+
+  .page--container {
+    background-color: #1e3737;
+
+    // Keep links (anchors) consistent across entire content area
+    a {
+      color: lightblue;
+
+      &:visited {
+        color: lightgreen;
+      }
+    } // a
+
+    header.page--header {
+      background-color: #172727;
+    } // header.page--header
+
+    .top-menu--container {
+      nav.authn--container ul {
+        border: 1px solid ivory;
+      } // nav.authn--container ul
+    } // .top-menu--container
+
+    button.styled {
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    } // button.styled
+
+    button.emphasis {
+      background-color: darkblue;
+    } // button.emphasis
+
+    .article-list {
+      article {
+        // box-shadow appears to be one of those rare CSS measurement+plus-colour styles that
+        // isn't a combination of other styles; there's no 'box-shadow-color' style or
+        // 'box-shadow-blur-radius`, for example. That means that, with the current theme setup,
+        // we have to replicate the (unchanging) offset-x, offset-y, and blur-radius values in
+        // each theme.
+        box-shadow: 0px 5px 2px #9d9d9d;
+        background-color: rgb(11, 3, 3);
+
+        header {
+          h1 {
+            font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+          }
+
+          .article--header--meta {
+            font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+          }
+        } // header
+      } // article
+    } // .article-list
+
+    footer {
+      border-top: 1px solid ivory;
+
+      nav.footer-menu {
+
+        ul li:not(:first-child) {
+          border-left: 1px solid ivory;
+        }
+      } // nav.footer-menu
+    } // footer
+  } // .page--container
+}
