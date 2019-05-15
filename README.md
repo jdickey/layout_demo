@@ -65,9 +65,9 @@ Note that generated files (e.g., `styles/index.processed.css`) are not listed he
 
 ## The Glorious Future&trade;
 
-The current structure of theme definitions is excessively verbose and fragile. Instead of identifying each element potentially requiring theming support and setting its colour to one of a handful of values, a real app would define its theme *as* a handful of colour values, with a set of specific values defining a theme. That would eliminate an unnecessary dependency on the current structure of the markup to define and maimtain a theme.
+[Issue #1](https://github.com/jdickey/layout_demo/issues/1): The current structure of theme definitions is excessively verbose and fragile. Instead of identifying each element potentially requiring theming support and setting its colour to one of a handful of values, a real app would define its theme *as* a handful of colour values, with a set of specific values defining a theme. That would eliminate an unnecessary dependency on the current structure of the markup to define and maimtain a theme.
 
-This is a trivial app; as such, it's a near-ideal testbed for experimenting with automating deployment. We have previously encountered significant friction with [Ansible](https://www.ansible.com/); [Terraform](https://www.terraform.io/) promises solutions to several of the specific problems we'd previously had (e.g., involving DigitalOcean) and greater consistency (e.g, with immutable deployment state).
+[Issue #2](https://github.com/jdickey/layout_demo/issues/2): This is a trivial app; as such, it's a near-ideal testbed for experimenting with automating deployment. We have previously encountered significant friction with [Ansible](https://www.ansible.com/); [Terraform](https://www.terraform.io/) promises solutions to several of the specific problems we'd previously had (e.g., involving DigitalOcean) and greater consistency (e.g, with immutable deployment state).
 
 ## Contributing
 
