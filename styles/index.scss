@@ -1,0 +1,95 @@
+//
+
+@import "mixins/horizontal-list";
+
+.page--container {
+  display: grid;
+  // Using grid-template-rows here because this grid will always be three items
+  // long and one wide, with each item itself being a grid or flex-box. We
+  // *should* be able to make this grid a flex-box instead, but oh well.
+  grid-template-rows: 10.375rem auto minmax(12rem, max-content);
+
+  align-items: stretch;
+  justify-items: center;
+
+  header.page--header {
+    width: 100%;
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  } // header.page--header
+
+  .top-menu--container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    nav.page-option--container ul {
+      @include horizontal-list;
+    } // nav.page-option--container ul
+
+    nav.authn--container ul {
+      @include horizontal-list;
+    } // .authn-container
+  } // .top-menu--container
+
+  button.styled {
+    border: 0;
+    line-height: 2rem;
+    // align-self: center;
+    font-size: 1rem;
+    border-radius: 10px;
+  } // button.styles
+
+  .article-list {
+    article {
+      padding: 0.5rem 1rem;
+
+      header {
+        h1 {
+          height: 7.2rem;
+          overflow: hidden;
+          word-break: normal;
+        }
+      } // header
+
+      .article--content-extract {
+        height: 7.2rem;
+        overflow: scroll;
+        text-overflow: ellipsis;
+        word-break: normal;
+      }
+    } // article
+  } // .article-list
+
+  footer {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    width: 100%;
+    // text-align: left;
+    display: flex;
+    justify-content: space-between;
+
+    nav.footer-menu ul {
+      @include horizontal-list;
+    }
+
+    @media screen and (min-width: 768px) {
+      nav.footer-menu ul {
+        flex-direction: row;
+      }
+    } // @media (min-width: 768px)
+  } // footer
+}
+
+@supports (display: grid) {
+  @import "grid";
+}
+
+@import "themes";

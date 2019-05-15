@@ -1,0 +1,84 @@
+//
+// Styling for browsers that support CSS Grid. Imported from `index.scss` if
+// `@supports(display: grid)` is true (and yields to its enclosed block).
+
+.page--container {
+  display: grid;
+  // Using grid-template-rows here because this grid will always be one item
+  // wide, with most items themselves being grids. We *should* be able to make
+  // this grid a flex-box instead, but oh well.
+  // Order of rows:
+  // 1. .page--header (10.375 rem)
+  // 2. .article-list (auto)
+  // 3. footer (minmax)
+  grid-template-rows: 10.375rem auto minmax(16rem, max-content);
+
+  align-items: stretch;
+  justify-items: center;
+
+  header.page--header {
+    display: grid;
+    grid-template-rows: auto 86px;
+    align-items: stretch;
+    justify-items: center;
+
+    h1 {
+      align-self: center;
+    }
+
+    img {
+      justify-self: stretch;
+    }
+  } // header.page--header
+
+  .article-list {
+    display: grid;
+    column-gap: 0.25rem;
+    row-gap: 0.5rem;
+    grid-template-columns: 1fr;
+
+    article {
+      width: 1fr;
+      height: 1fr;
+    } // article
+  } // .article-list
+
+  footer.footer--combined {
+    grid-row: -1 / -1;
+  }
+
+  // Media queries need to be in ascending order like this, otherwise the last
+  // one to match the condition wins. Showing only 2 columns on a 5K monitor
+  // would *not* be good UX.
+
+  @media screen and (min-width: 600px) {
+    .article-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .article-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .article-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .article-list {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  // // Sensible? What do you think?
+  // @media screen and (min-width: 1920px) {
+  //   .article-list {
+  //     grid-template-columns: repeat(8, 1fr);
+  //   }
+  // }
+} // .page--container

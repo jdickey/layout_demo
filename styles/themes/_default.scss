@@ -1,0 +1,82 @@
+
+.body--default-theme {
+  background-color: #f5f5f5;
+
+  .page--container {
+    background-color: #3c6f6f;
+
+    // Keep links (anchors) consistent across entire content area
+    a {
+      color: blue;
+
+      &:visited {
+        color: lightgreen;
+      }
+    }
+
+    header.page--header {
+      background-color: #2f4f4f;
+
+      p.copyright-para {
+        strong.copyright-statement {
+          color: red;
+          a {
+            color: lightblue;
+          }
+        }
+      } // p.copyright-para
+    } // header.page--header
+
+    .top-menu--container {
+      nav.authn--container ul {
+        border: 1px solid #3c6f6f;
+      } // nav.authn--container ul
+    } // .top-menu--container
+
+    button.styled {
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    } // button.styled
+
+    button.emphasis {
+      background-color: darkblue;
+    } // button.emphasis
+
+    .article-list {
+      article {
+        // box-shadow appears to be one of those rare CSS measurement+plus-colour styles that
+        // isn't a combination of other styles; there's no 'box-shadow-color' style or
+        // 'box-shadow-blur-radius`, for example. That means that, with the current theme setup,
+        // we have to replicate the (unchanging) offset-x, offset-y, and blur-radius values in
+        // each theme.
+        box-shadow: 0px 5px 2px #727272;
+        background-color: ivory;
+
+        header {
+          h1 {
+            font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+          }
+
+          .article--header--meta {
+            font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+          }
+        }
+      } // article
+    } // .article-list
+
+    footer {
+      border-top: 1px solid black;
+
+      nav.footer-menu {
+
+        ul li:not(:first-child) {
+          border-left: 1px solid black;
+        }
+      } // nav.footer-menu
+
+      nav.footer-menu ul li:not(:first-child) {
+        border-left: 1px solid black;
+      } // nav.footer-menu ul li:not(:first-child)
+    } // footer
+  } // .page-container
+}

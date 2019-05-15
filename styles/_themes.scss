@@ -1,0 +1,10 @@
+
+// Add themes to the 'themes' directory and @import them here, to avoid any
+// confusion from editing a different theme than you intend. I recommend copying
+// the theme closest to your eventual intent to a new file, @importing it, and
+// then tweaking it to get the styles right. If you add styling for elements
+// that were not themed before, please open a *separate PR* to update all other
+// existing themes correspondingly.
+
+@import "themes/dark";
+@import "themes/default";

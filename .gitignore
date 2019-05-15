@@ -1,0 +1,5 @@
+.rbenv-gemsets
+.sass-cache/
+tmp/
+styles/index.processed.css
+styles/index.processed.css.map
